@@ -34,53 +34,71 @@
 ## 🚀 Installation
 
 ### Prerequisites
-- Python 3.x
-- pip (Python package installer)
+- Python 3.x (Download from [python.org](https://www.python.org/downloads/))
+- pip (Python package installer, comes with Python)
+- Git (Download from [git-scm.com](https://git-scm.com/downloads))
 
-### Setup
+### Step-by-Step Setup
 
-1. **Clone the repository**
+1. **Open Terminal/Command Prompt**
+   - Windows: Press `Win + R`, type `cmd`, and press Enter
+   - Mac: Open Terminal from Applications/Utilities
+   - Linux: Use your preferred terminal
+
+2. **Clone the Repository**
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/yourusername/ai-pacman.git
 cd ai-pacman
 ```
 
-2. **Create a virtual environment (recommended)**
-```bash
-# Windows
-python -m venv venv
-venv\Scripts\activate
+3. **Set Up Python Environment**
 
-# Linux/Mac
-python3 -m venv venv
-source venv/bin/activate
-```
+   Windows:
+   ```bash
+   python -m venv venv
+   venv\Scripts\activate
+   pip install -r requirements.txt
+   ```
 
-3. **Install dependencies**
-```bash
-pip install -r requirements.txt
-```
+   Mac/Linux:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   pip install -r requirements.txt
+   ```
 
-## 🎮 How to Run
+   Note: If you get a "python not found" error, try using `python3` instead of `python`
 
-1. **Start the Web Interface**
-```bash
-python app.py
-```
+4. **Verify Installation**
+   - Make sure all dependencies are installed:
+   ```bash
+   pip list
+   ```
+   - You should see Flask and other required packages listed
+
+## 🎮 Running the Game
+
+1. **Start the Server**
+   ```bash
+   # Make sure you're in the ai-pacman directory
+   python app.py
+   ```
 
 2. **Access the Game**
-- Open your web browser
-- Go to `http://localhost:5000`
-- Choose your game mode:
-  - "PLAY MANUAL" for keyboard controls
-  - "PLAY WITH AI" to watch the AI play
+   - Open your web browser
+   - Go to `http://localhost:5000`
+   - You should see the game interface
+
+3. **Choose Game Mode**
+   - Click "PLAY MANUAL" for keyboard controls
+   - Click "PLAY WITH AI" to watch the AI play
 
 ### Game Controls (Manual Mode)
-- **↑**: Move Up
-- **↓**: Move Down
-- **←**: Move Left
-- **→**: Move Right
-- **ESC**: Return to Menu
+- **↑** or **W**: Move Up
+- **↓** or **S**: Move Down
+- **←** or **A**: Move Left
+- **→** or **D**: Move Right
+- **ESC** or **Back Button**: Return to Menu
 
 ## 🤖 AI Strategy
 
@@ -99,62 +117,41 @@ Our SmartPacmanAgent employs sophisticated strategies:
 ### 3. Power Pellet Strategy
 - Optimal power pellet timing
 - Aggressive ghost hunting when powered
-- Safe distance maintenance from ghosts
 
-## 🔧 Project Structure
-```
-ai-pacman/
-│
-├── app.py              # Flask web server
-├── pacman.py           # Main game logic
-├── game.py             # Core game mechanics
-├── smartAgent.py       # AI implementation
-│
-├── static/
-│   ├── css/
-│   │   └── style.css   # Retro-themed styles
-│   └── js/
-│       └── main.js     # Frontend interactions
-│
-├── templates/
-│   ├── index.html      # Main menu interface
-│   └── game.html       # Game window template
-│
-└── requirements.txt    # Project dependencies
-```
+## 🔧 Troubleshooting
 
-## 🐛 Troubleshooting
+### Common Issues:
 
-### Common Issues
+1. **Port Already in Use**
+   ```bash
+   # Try running on a different port
+   python app.py --port 5001
+   ```
 
-1. **Game doesn't start**
-   - Ensure Python 3.x is installed and in PATH
-   - Check if all dependencies are installed
-   - Try running with administrator privileges
+2. **Python/pip Not Found**
+   - Ensure Python is added to your system's PATH
+   - Try using `python3` and `pip3` instead
 
-2. **Web interface not loading**
-   - Verify Flask server is running
-   - Check if port 5000 is available
-   - Clear browser cache
+3. **Module Not Found Errors**
+   - Make sure you're in the virtual environment (you should see `(venv)` in your terminal)
+   - Try reinstalling dependencies:
+   ```bash
+   pip install -r requirements.txt --force-reinstall
+   ```
 
-3. **AI mode not working**
-   - Ensure SmartAgent.py is present
-   - Check Python environment activation
-   - Verify all game dependencies
+4. **Browser Shows Blank Page**
+   - Clear your browser cache
+   - Try a different browser
+   - Check if the server is running (you should see Flask output in the terminal)
 
-## 📝 Notes
+## 📝 Requirements
 
-- The game will open in a new window when launched
-- Close the game window to return to the menu
-- The web interface uses port 5000 by default
+See `requirements.txt` for a complete list of dependencies.
 
 ## 🤝 Contributing
 
-Feel free to:
-- Report bugs
-- Suggest features
-- Submit pull requests
+Feel free to submit issues and enhancement requests!
 
 ## 📜 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
