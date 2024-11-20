@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacman Game - Retro Edition</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" type="image/png" href="/static/images/pacman-icon.png">
+    <meta name="description" content="Play the classic Pacman game with a modern retro interface">
+</head>
+<body>
+    <div class="dots"></div>
+    
+    <div class="container">
+        <div class="menu-container">
+            <h1 class="title">PACMAN</h1>
+            
+            <div class="buttons-container">
+                <button id="playManual" class="menu-btn" aria-label="Play Manual Mode">
+                    <span class="btn-text">PLAY MANUAL</span>
+                </button>
+                <button id="playAI" class="menu-btn" aria-label="Play AI Mode">
+                    <span class="btn-text">PLAY WITH AI</span>
+                </button>
+                <button id="quit" class="menu-btn" onclick="window.close()" aria-label="Quit Game">
+                    <span class="btn-text">QUIT</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <button id="backBtn" class="back-btn menu-btn" aria-label="Back to Menu">
+        <span class="btn-text">← BACK</span>
+    </button>
+    
+    <iframe class="game-frame" frameborder="0" title="Pacman Game Window"></iframe>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

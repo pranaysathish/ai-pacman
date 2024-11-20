@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacman Game - {{ mode.title() }} Mode</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: black;
+            color: yellow;
+            font-family: 'Press Start 2P', cursive;
+            text-align: center;
+        }
+        
+        h1 {
+            margin-bottom: 20px;
+        }
+        
+        .message {
+            font-size: 1.2em;
+            margin: 20px;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ mode.title() }} Mode</h1>
+    <div class="message">
+        Game window has been opened in a new window.<br>
+        You can close this tab.
+    </div>
+</body>
+</html>

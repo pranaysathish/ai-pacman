@@ -2,24 +2,23 @@
 
 <div align="center">
 
-![Pac-Man game](pacman_game.gif)
-
 [![Python](https://img.shields.io/badge/Python-3.x-blue.svg)](https://www.python.org/downloads/)
+[![Flask](https://img.shields.io/badge/Flask-3.0.2-green.svg)](https://flask.palletsprojects.com/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![GitHub issues](https://img.shields.io/github/issues/pranaysathish/ai-pacman)](https://github.com/pranaysathish/ai-pacman/issues)
 
-*A modern implementation of the classic Pacman game with advanced AI capabilities*
+*A modern implementation of the classic Pacman game with advanced AI capabilities and a retro-themed web interface*
 
-[Features](#features) • [Installation](#installation) • [How to Play](#how-to-play) • [AI Strategy](#ai-strategy) • [Contributing](#contributing)
+[Features](#features) • [Installation](#installation) • [How to Play](#how-to-play) • [AI Strategy](#ai-strategy)
 
 </div>
 
 ## 🌟 Features
 
-### Modern Interface
-- **Retro-themed Graphics**: Classic arcade feel with modern polish
-- **Intuitive Menu System**: Easy navigation between game modes
-- **Real-time Score Display**: Track your performance as you play
+### Modern Web Interface
+- **Retro-themed Design**: Classic arcade feel with modern polish
+- **3D Effects**: Dynamic animations and depth
+- **CRT Screen Effect**: Authentic arcade experience
+- **Responsive Layout**: Works on different screen sizes
 
 ### Game Modes
 - 🎮 **Manual Play**: Classic Pacman gameplay with keyboard controls
@@ -36,38 +35,52 @@
 
 ### Prerequisites
 - Python 3.x
-- Tkinter (usually comes with Python)
+- pip (Python package installer)
 
 ### Setup
-1. Clone the repository:
+
+1. **Clone the repository**
 ```bash
-git clone https://github.com/pranaysathish/ai-pacman.git
+git clone <your-repo-url>
 cd ai-pacman
 ```
 
-2. Install dependencies:
+2. **Create a virtual environment (recommended)**
+```bash
+# Windows
+python -m venv venv
+venv\Scripts\activate
+
+# Linux/Mac
+python3 -m venv venv
+source venv/bin/activate
+```
+
+3. **Install dependencies**
 ```bash
 pip install -r requirements.txt
 ```
 
-## 🎮 How to Play
+## 🎮 How to Run
 
-### Starting the Game
+1. **Start the Web Interface**
 ```bash
-python menu.py
+python app.py
 ```
 
-### Game Controls
-#### Manual Mode
+2. **Access the Game**
+- Open your web browser
+- Go to `http://localhost:5000`
+- Choose your game mode:
+  - "PLAY MANUAL" for keyboard controls
+  - "PLAY WITH AI" to watch the AI play
+
+### Game Controls (Manual Mode)
 - **↑**: Move Up
 - **↓**: Move Down
 - **←**: Move Left
 - **→**: Move Right
 - **ESC**: Return to Menu
-
-#### AI Mode
-- Watch the AI play automatically
-- Press ESC to return to menu
 
 ## 🤖 AI Strategy
 
@@ -88,51 +101,60 @@ Our SmartPacmanAgent employs sophisticated strategies:
 - Aggressive ghost hunting when powered
 - Safe distance maintenance from ghosts
 
-### 4. Adaptive Behavior
-- Real-time strategy adjustment
-- Pattern recognition
-- Performance optimization
+## 🔧 Project Structure
+```
+ai-pacman/
+│
+├── app.py              # Flask web server
+├── pacman.py           # Main game logic
+├── game.py             # Core game mechanics
+├── smartAgent.py       # AI implementation
+│
+├── static/
+│   ├── css/
+│   │   └── style.css   # Retro-themed styles
+│   └── js/
+│       └── main.js     # Frontend interactions
+│
+├── templates/
+│   ├── index.html      # Main menu interface
+│   └── game.html       # Game window template
+│
+└── requirements.txt    # Project dependencies
+```
 
-## 🔧 Technical Details
+## 🐛 Troubleshooting
 
-### Architecture
-- Modular design for easy extension
-- Event-driven gameplay mechanics
-- Efficient state management
+### Common Issues
 
-### AI Components
-- Custom pathfinding algorithms
-- State evaluation system
-- Decision tree implementation
+1. **Game doesn't start**
+   - Ensure Python 3.x is installed and in PATH
+   - Check if all dependencies are installed
+   - Try running with administrator privileges
+
+2. **Web interface not loading**
+   - Verify Flask server is running
+   - Check if port 5000 is available
+   - Clear browser cache
+
+3. **AI mode not working**
+   - Ensure SmartAgent.py is present
+   - Check Python environment activation
+   - Verify all game dependencies
+
+## 📝 Notes
+
+- The game will open in a new window when launched
+- Close the game window to return to the menu
+- The web interface uses port 5000 by default
 
 ## 🤝 Contributing
 
-We welcome contributions! Here's how you can help:
+Feel free to:
+- Report bugs
+- Suggest features
+- Submit pull requests
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+## 📜 License
 
-## 📝 License
-
-This project is based on the UC Berkeley Pacman AI projects and is available for educational purposes. Please see the [original project page](http://ai.berkeley.edu/project_overview.html) for more details.
-
-## 🙋‍♂️ Support
-
-Having issues? Let us know:
-- Create an issue in GitHub
-- Contact the maintainers
-- Check the [documentation](docs/)
-
-## 🌟 Acknowledgments
-
-- Original Pacman AI project by UC Berkeley
-- All contributors and maintainers
-- The open-source community
-
----
-<div align="center">
-Made with ❤️ by the AI Pacman Team
-</div>
+This project is licensed under the MIT License - see the LICENSE file for details.
