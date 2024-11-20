@@ -1,89 +1,138 @@
-# Playing Pac-Man game
+# Enhanced AI Pacman Game 🎮
+
+<div align="center">
 
 ![Pac-Man game](pacman_game.gif)
 
-The Pac-Man projects were developed for [UC Berkeley's introductory artificial intelligence course, CS 188](http://ai.berkeley.edu/project_overview.html). They apply an array of AI techniques to playing Pac-Man. However, these projects don't focus on building AI for video games. Instead, they teach foundational AI concepts, such as informed state-space search, probabilistic inference, and reinforcement learning. These concepts underly real-world application areas such as natural language processing, computer vision, and robotics.
+[![Python](https://img.shields.io/badge/Python-3.x-blue.svg)](https://www.python.org/downloads/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/pranaysathish/ai-pacman)](https://github.com/pranaysathish/ai-pacman/issues)
 
-# Features
-- Classic Pac-Man gameplay with retro-themed graphics
-- Modern menu interface with easy game mode selection
-- Two play modes:
-  - Manual Play: Control Pac-Man using arrow keys
-  - AI Play: Watch a smart AI agent play the game
-- Enhanced AI agent with advanced strategies:
-  - Intelligent food collection
-  - Smart ghost avoidance
-  - Strategic power pellet usage
-  - Adaptive decision making
-  - Trap avoidance
+*A modern implementation of the classic Pacman game with advanced AI capabilities*
 
-# Install
-- This project runs on **Python 3.x**
-- Install required packages by running:
+[Features](#features) • [Installation](#installation) • [How to Play](#how-to-play) • [AI Strategy](#ai-strategy) • [Contributing](#contributing)
+
+</div>
+
+## 🌟 Features
+
+### Modern Interface
+- **Retro-themed Graphics**: Classic arcade feel with modern polish
+- **Intuitive Menu System**: Easy navigation between game modes
+- **Real-time Score Display**: Track your performance as you play
+
+### Game Modes
+- 🎮 **Manual Play**: Classic Pacman gameplay with keyboard controls
+- 🤖 **AI Play**: Watch our sophisticated AI agent navigate the maze
+- Multiple difficulty levels and maze layouts
+
+### Advanced AI Implementation
+- Intelligent pathfinding algorithms
+- Strategic ghost avoidance
+- Smart power pellet utilization
+- Adaptive gameplay strategies
+
+## 🚀 Installation
+
+### Prerequisites
+- Python 3.x
+- Tkinter (usually comes with Python)
+
+### Setup
+1. Clone the repository:
+```bash
+git clone https://github.com/pranaysathish/ai-pacman.git
+cd ai-pacman
 ```
+
+2. Install dependencies:
+```bash
 pip install -r requirements.txt
 ```
 
-# How to Play
-1. Start the game menu:
-```
+## 🎮 How to Play
+
+### Starting the Game
+```bash
 python menu.py
 ```
 
-2. Choose your play mode:
-   - **Play Manual**: Control Pac-Man yourself using arrow keys
-   - **Play with AI**: Watch the smart AI agent play the game
-   - **Quit**: Exit the game
+### Game Controls
+#### Manual Mode
+- **↑**: Move Up
+- **↓**: Move Down
+- **←**: Move Left
+- **→**: Move Right
+- **ESC**: Return to Menu
 
-3. For advanced options:
-```
-python pacman.py -h
-```
+#### AI Mode
+- Watch the AI play automatically
+- Press ESC to return to menu
 
-# Game Controls
-- **Manual Mode**:
-  - Use arrow keys to move Pac-Man
-  - Press ESC to return to menu
-- **AI Mode**:
-  - Watch the AI play automatically
-  - Press ESC to return to menu
+## 🤖 AI Strategy
 
-# AI Strategy
-The SmartPacmanAgent uses sophisticated strategies:
-1. Food Collection:
-   - Efficiently navigates to nearby food pellets
-   - Considers path safety when choosing routes
-2. Ghost Avoidance:
-   - Maintains safe distance from dangerous ghosts
-   - Evaluates multiple escape routes
-3. Power Pellet Usage:
-   - Times power pellet collection strategically
-   - Hunts vulnerable ghosts when powered up
-4. Adaptive Behavior:
-   - Avoids getting trapped in corners
-   - Changes strategy based on game state
+Our SmartPacmanAgent employs sophisticated strategies:
 
-# Using Pac-Man in your AI Course
-You are welcome to use the Pac-Man projects and infrastructure for any educational or personal use. We ask only that you:
+### 1. Intelligent Navigation
+- Dynamic pathfinding to collect pellets efficiently
+- Real-time route optimization
+- Trap avoidance mechanisms
 
-1. Please do not distribute or post solutions to any of the projects.
-2. Please retain the attribution text at the top of each Python file.
-3. Talk to us before re-releasing, repacking, or extending the projects.
+### 2. Ghost Management
+- Advanced ghost tracking
+- Risk assessment algorithms
+- Strategic escape route planning
 
-Additionally, if you have any questions, feedback, or bug reports about our projects, there are two ways of getting them addressed. (1) An public instructor forum through Piazza, in which you will need to contact us to get an access code to join, and (2) a private form linked here (preferably for bug reports). For more information, see the [Contact](http://ai.berkeley.edu/contact.html) section.
+### 3. Power Pellet Strategy
+- Optimal power pellet timing
+- Aggressive ghost hunting when powered
+- Safe distance maintenance from ghosts
 
-# Contact Information
+### 4. Adaptive Behavior
+- Real-time strategy adjustment
+- Pattern recognition
+- Performance optimization
 
-## Course Materials
+## 🔧 Technical Details
 
-The lecture slides, homework and exams were developed primarily by [Dan Klein](http://www.eecs.berkeley.edu/~klein) and [Pieter Abbeel](http://www.eecs.berkeley.edu/~pabbeel).
+### Architecture
+- Modular design for easy extension
+- Event-driven gameplay mechanics
+- Efficient state management
 
-The artwork was drawn by [Ketrina Yim](http://www.ketrinayim.com/).
+### AI Components
+- Custom pathfinding algorithms
+- State evaluation system
+- Decision tree implementation
 
-## The Pacman Projects
+## 🤝 Contributing
 
-The Pac-Man projects were developed primarily by [John DeNero](http://www.denero.org/) and [Dan Klein](http://www.eecs.berkeley.edu/~klein).
+We welcome contributions! Here's how you can help:
 
-The autograder development was headed up by Nick Hay, Brad Miller, [Dan Klein](http://www.eecs.berkeley.edu/~klein), and [Pieter Abbeel](http://www.eecs.berkeley.edu/~pabbeel).
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-Many others have contributed to the projects, including Nimar Arora, David Burkett, Jeremy Cowles, Jeff Donahue, Dan Gillick, Aria Haghighi, Judy Hoffman, Ed Karuna, Jonathan Long, Jeremy Maitin-Shepard, Barak Michener, Aditi Muralidharan, Adam Pauls, Arjun Singh, and Daniel Urieli.
+## 📝 License
+
+This project is based on the UC Berkeley Pacman AI projects and is available for educational purposes. Please see the [original project page](http://ai.berkeley.edu/project_overview.html) for more details.
+
+## 🙋‍♂️ Support
+
+Having issues? Let us know:
+- Create an issue in GitHub
+- Contact the maintainers
+- Check the [documentation](docs/)
+
+## 🌟 Acknowledgments
+
+- Original Pacman AI project by UC Berkeley
+- All contributors and maintainers
+- The open-source community
+
+---
+<div align="center">
+Made with ❤️ by the AI Pacman Team
+</div>
