@@ -242,6 +242,165 @@ body {
     animation: chomp 0.5s ease-out forwards;
 }
 
+.parallax-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.parallax-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.layer-1 {
+    opacity: 0.3;
+}
+
+.layer-2 {
+    opacity: 0.2;
+}
+
+.layer-3 {
+    opacity: 0.1;
+}
+
+.parallax-element {
+    position: absolute;
+    color: var(--pacman-yellow);
+    font-size: 24px;
+    transition: transform 0.2s ease-out;
+}
+
+.ghost-element {
+    color: #ff0000; /* Red ghost */
+}
+
+.ghost-element.pink {
+    color: #ffb8ff; /* Pink ghost */
+}
+
+.ghost-element.cyan {
+    color: #00ffff; /* Cyan ghost */
+}
+
+.ghost-element.orange {
+    color: #ffb852; /* Orange ghost */
+}
+
+.dot-element {
+    color: var(--pacman-yellow);
+    font-size: 12px;
+}
+
+/* Ghost Trail Effects */
+.ghost-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.floating-ghost {
+    position: absolute;
+    font-size: 32px;
+    opacity: 0;
+    filter: blur(2px);
+    animation: floatGhost 8s linear;
+}
+
+.ghost-trail {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    opacity: 0;
+    filter: blur(8px);
+}
+
+/* Ghost colors */
+.ghost-red {
+    color: #ff0000;
+}
+.ghost-red .ghost-trail {
+    background: rgba(255, 0, 0, 0.3);
+}
+
+.ghost-pink {
+    color: #ffb8ff;
+}
+.ghost-pink .ghost-trail {
+    background: rgba(255, 184, 255, 0.3);
+}
+
+.ghost-cyan {
+    color: #00ffff;
+}
+.ghost-cyan .ghost-trail {
+    background: rgba(0, 255, 255, 0.3);
+}
+
+.ghost-orange {
+    color: #ffb852;
+}
+.ghost-orange .ghost-trail {
+    background: rgba(255, 184, 82, 0.3);
+}
+
+/* Enhanced Ghost Background Effects */
+.ghost-bg {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: blur(1px);
+    opacity: 0.4;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.ghost-bg::after {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    border-radius: 50%;
+    background: radial-gradient(circle, 
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0) 70%
+    );
+    opacity: 0;
+    animation: ghostGlow 2s ease-in-out infinite;
+}
+
+.ghost-bg.blinky {
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.5));
+}
+
+.ghost-bg.pinky {
+    filter: drop-shadow(0 0 10px rgba(255, 182, 255, 0.5));
+}
+
+.ghost-bg.inky {
+    filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.5));
+}
+
+.ghost-bg.clyde {
+    filter: drop-shadow(0 0 10px rgba(255, 182, 85, 0.5));
+}
+
 @keyframes glow {
     from {
         text-shadow: var(--neon-glow);
@@ -364,6 +523,80 @@ body {
     100% {
         background-position: 100px 100px;
     }
+}
+
+@keyframes floatGhost {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px) translateY(0);
+    }
+    10% {
+        opacity: 0.6;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(calc(100vw + 100px)) translateY(100px);
+    }
+}
+
+@keyframes fadeTrail {
+    0% {
+        opacity: 0.4;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.5);
+    }
+}
+
+@keyframes ghostFloat {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-20px) scale(1.1);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes ghostGlow {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes ghostWiggle {
+    0%, 100% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+}
+
+.ghost-bg.animated {
+    animation: ghostFloat 4s ease-in-out infinite;
+}
+
+.ghost-bg.wiggle {
+    animation: ghostWiggle 2s ease-in-out infinite;
+}
+
+.ghost-bg:hover {
+    opacity: 0.6;
+    filter: brightness(1.2);
+    transform: scale(1.2);
 }
 
 /* Add scanlines effect */

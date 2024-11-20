@@ -118,40 +118,122 @@ Our SmartPacmanAgent employs sophisticated strategies:
 - Optimal power pellet timing
 - Aggressive ghost hunting when powered
 
+## 🛠️ Requirements
+
+### Minimum System Requirements
+- Operating System: Windows 10/11, macOS 10.14+, or Linux
+- Processor: 1.6 GHz or faster
+- RAM: 4 GB
+- Storage: 100 MB free space
+- Web Browser: Chrome 80+, Firefox 75+, or Edge 80+
+- Internet Connection: Required for initial setup
+
+### Software Dependencies
+- Python 3.8 or higher
+- Flask 3.0.2
+- Numpy
+- Pygame
+- Other dependencies listed in requirements.txt
+
 ## 🔧 Troubleshooting
 
-### Common Issues:
+### Common Issues
 
-1. **Port Already in Use**
+1. **Port 5000 Already in Use**
    ```bash
-   # Try running on a different port
-   python app.py --port 5001
+   # Error: Address already in use
+   # Solution: Kill the process using port 5000
+   # Windows:
+   netstat -ano | findstr :5000
+   taskkill /PID <PID> /F
+   
+   # Mac/Linux:
+   lsof -i :5000
+   kill -9 <PID>
    ```
 
-2. **Python/pip Not Found**
-   - Ensure Python is added to your system's PATH
-   - Try using `python3` and `pip3` instead
-
-3. **Module Not Found Errors**
-   - Make sure you're in the virtual environment (you should see `(venv)` in your terminal)
-   - Try reinstalling dependencies:
+2. **Python Virtual Environment Issues**
    ```bash
-   pip install -r requirements.txt --force-reinstall
+   # If venv activation fails, try:
+   # Windows:
+   python -m pip install --user virtualenv
+   # Mac/Linux:
+   python3 -m pip install --user virtualenv
    ```
 
-4. **Browser Shows Blank Page**
-   - Clear your browser cache
-   - Try a different browser
-   - Check if the server is running (you should see Flask output in the terminal)
+3. **Package Installation Errors**
+   ```bash
+   # If pip install fails, try:
+   pip install --upgrade pip
+   pip install -r requirements.txt --no-cache-dir
+   ```
 
-## 📝 Requirements
+## 🎮 Game Features
 
-See `requirements.txt` for a complete list of dependencies.
+### Visual Effects
+- Retro CRT screen simulation
+- Dynamic ghost trails
+- Particle effects
+- 3D perspective maze
+- Animated background elements
+
+### Sound Effects
+- Classic Pacman sounds
+- Background music
+- Power pellet effects
+- Ghost sounds
+- Victory/defeat jingles
+
+### AI Features
+- Multiple AI difficulty levels
+- Pathfinding visualization
+- Strategy explanation overlay
+- Performance metrics display
+
+## 🔄 Updates and Maintenance
+
+### Updating the Game
+```bash
+# Pull latest changes
+git pull origin main
+
+# Update dependencies
+pip install -r requirements.txt --upgrade
+```
+
+### Clearing Game Data
+```bash
+# Remove cached files
+rm -rf __pycache__
+rm -rf .pytest_cache
+```
 
 ## 🤝 Contributing
 
-Feel free to submit issues and enhancement requests!
+We welcome contributions! Here's how you can help:
 
-## 📜 License
+1. Fork the repository
+2. Create a feature branch
+   ```bash
+   git checkout -b feature/YourFeature
+   ```
+3. Commit your changes
+   ```bash
+   git commit -m 'Add some feature'
+   ```
+4. Push to the branch
+   ```bash
+   git push origin feature/YourFeature
+   ```
+5. Open a Pull Request
+
+## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Original Pacman game by Namco
+- Flask framework developers
+- Open source community
+- All contributors and testers
