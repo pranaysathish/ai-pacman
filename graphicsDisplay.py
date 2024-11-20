@@ -19,20 +19,19 @@ from game import Directions
 
 DEFAULT_GRID_SIZE = 30.0
 INFO_PANE_HEIGHT = 35
-BACKGROUND_COLOR = formatColor(0,0,0)
-WALL_COLOR = formatColor(0.0/255.0, 51.0/255.0, 255.0/255.0)
-INFO_PANE_COLOR = formatColor(.4,.4,0)
-SCORE_COLOR = formatColor(.9, .9, .9)
+BACKGROUND_COLOR = formatColor(0,0,0)  # Pure black for retro feel
+WALL_COLOR = formatColor(33/255.0, 33/255.0, 222/255.0)  # Retro blue
+INFO_PANE_COLOR = formatColor(0,0,0)  # Black background
+SCORE_COLOR = formatColor(255/255.0, 255/255.0, 0)  # Bright yellow for score
 PACMAN_OUTLINE_WIDTH = 2
-PACMAN_CAPTURE_OUTLINE_WIDTH = 4
 
-GHOST_COLORS = []
-GHOST_COLORS.append(formatColor(.9,0,0)) # Red
-GHOST_COLORS.append(formatColor(0,.3,.9)) # Blue
-GHOST_COLORS.append(formatColor(.98,.41,.07)) # Orange
-GHOST_COLORS.append(formatColor(.1,.75,.7)) # Green
-GHOST_COLORS.append(formatColor(1.0,0.6,0.0)) # Yellow
-GHOST_COLORS.append(formatColor(.4,0.13,0.91)) # Purple
+GHOST_COLORS = []                       # Brighter, more vibrant ghost colors
+GHOST_COLORS.append(formatColor(255/255.0, 0, 0))       # Red
+GHOST_COLORS.append(formatColor(0, 128/255.0, 255/255.0))    # Blue
+GHOST_COLORS.append(formatColor(255/255.0, 128/255.0, 0))    # Orange
+GHOST_COLORS.append(formatColor(0, 255/255.0, 0))       # Green
+GHOST_COLORS.append(formatColor(255/255.0, 192/255.0, 0))    # Yellow
+GHOST_COLORS.append(formatColor(192/255.0, 0, 255/255.0))    # Purple
 
 TEAM_COLORS = GHOST_COLORS[:2]
 
@@ -645,7 +644,6 @@ class FirstPersonPacmanGraphics(PacmanGraphics):
 
 def add(x, y):
   return (x[0] + y[0], x[1] + y[1])
-
 
 # Saving graphical output
 # -----------------------
